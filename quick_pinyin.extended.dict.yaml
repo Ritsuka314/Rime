@@ -1,0 +1,10 @@
+# Rime dictionary
+# encoding: utf-8
+
+---
+name: quick_pinyin.extended
+
+sort: by_weight
+import_tables:
+  - quick_pinyin
+...

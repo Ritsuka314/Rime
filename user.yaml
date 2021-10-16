@@ -1,2 +1,8 @@
 var:
-  last_build_time: 1580740845
+  last_build_time: 1629802366
+  option:
+    ascii_punct: false
+    simplification: true
+  previously_selected_schema: quick_pinyin
+  schema_access_time:
+    quick_pinyin: 1629802303
