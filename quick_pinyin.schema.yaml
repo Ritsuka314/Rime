@@ -22,9 +22,12 @@ switches:
   - name: full_shape
     states: [ 半角, 全角 ]
   - name: ascii_punct
-    states: [ ，。, ，． ]
+    #states: [ ，。, ，． ]
+    states: [ 句讀, 符號 ]
   - name: simplification
     states: [ 漢字, 汉字 ]
+  - name: extended_charset
+    states: [ 通用, 增廣 ]
 
 engine:
   processors:
@@ -220,6 +223,8 @@ reverse_lookup:
 
 punctuator:
   import_preset: default
+  half_shape:
+    ".": "．"
 
 key_binder:
   import_preset: default
