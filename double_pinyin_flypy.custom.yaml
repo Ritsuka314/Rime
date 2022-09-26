@@ -33,16 +33,11 @@ patch:
       states: ["中文", "西文"]
     - name: full_shape
       states: ["半角", "全角"]
+    - name: ascii_punct
+      #states: [ ，。, ，． ]
+      states: [ 句讀, 符號 ]
     - name: zh_simp                      # (※1) 繁简转换
-      reset: 1
       states: ["漢字", "汉字"]
-
-    - options: ["utf8", "gbk", "gb2312"] # (※2)字符集选单
-      reset: 0                           #     默认 UTF
-      states:
-        - UTF-8
-        - GBK
-        - GB2312
     - name: show_emoji
       reset: 1
       states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
@@ -77,6 +72,7 @@ patch:
 # 符号快速输入和部分符号的快速上屏
   punctuator:
     import_preset: symbols
+    import_preset: default
     symbols:
       "/fs": [½, ‰, ¼, ⅓, ⅔, ¾, ⅒ ]
       "/bq": [😂️, 😅️, ☺️, 😱️, 😭️, 😇️, 🙃️, 🤔️, 💊️, 💯️, 👍️, 🙈️, 💩️, 😈️ ]
@@ -84,6 +80,7 @@ patch:
       "/fh": [ ©, ®, ℗, ℠, ™, ℡, ⓘ, ♂, ♀, ☉, ☊, ☋, ☌, ☍, ☐, ☑︎, ☒, ☜, ☝, ☞, ☟, ✎, ✄, ♲, ♻, ⚐, ⚑, ⚠]
       "/xh": [ ＊, ×, ✱, ★, ☆, ✩, ✧, ❋, ❊, ❉, ❈, ❅, ✿, ✲]
     half_shape:
+      ".": "．"
       "#": "#"
       "*": "*"
       "`": "`"
