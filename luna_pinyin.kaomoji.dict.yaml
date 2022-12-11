@@ -5,24 +5,25 @@
 ---
 name: luna_pinyin.kaomoji
 version: "1.0"
-sort: origin
+sort: by_weight
 use_preset_vocabulary: false
 ...
 
-(╯‵□′)╯︵┻━┻	xianzhuo
-¯\_(ツ)_/¯	wusuowei
-~\(≧▽≦)/~	ye
-Ծ‸ Ծ	yumen
-～(￣▽￣～)~	piao
-(๑•̀ㅂ•́)و✧	jiayou
-Σ( ° △ °|||)︴	jing
-ฅ( ̳• ◡ • ̳)ฅ	miao
-ヽ(•̀ω•́ )ゝ	chong
-～(ˉ﹃ˉ～)~	e
-～(ˉ﹃ˉ～)~	chan
-눈_눈	kun
-눈_눈	lei
-( ´・ω・` )	zhajikuai
+(╯‵□′)╯︵┻━┻	xian zhuo	100%
+¯\_(ツ)_/¯	wu suo wei	100%
+¯\_(ツ)_/¯	wu yu	100%
+~\(≧▽≦)/~	ye	100%
+Ծ‸ Ծ	yu men	100%
+～(￣▽￣～)~		piao	100%
+(๑•̀ㅂ•́)و✧	jia you	100%
+Σ( ° △ °|||)︴	jing	100%
+ฅ( ̳• ◡ • ̳)ฅ	miao	100%
+ヽ(•̀ω•́ )ゝ	chong	100%
+～(ˉ﹃ˉ～)~	e	100%
+～(ˉ﹃ˉ～)~	chan	100%
+눈_눈	kun	100%
+눈_눈	lei	100%
+( ´・ω・` )	zha ji kuai	100%
 w(ﾟДﾟ)w	aa	80%
 ┗|｀O′|┛ 嗷~~	ao	80%
 ヾ(≧O≦)〃嗷~	ao

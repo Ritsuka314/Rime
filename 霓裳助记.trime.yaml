@@ -38,7 +38,7 @@ preset_keyboards:
         "keys/@1/hint": 'ei'    # w
         "keys/@2/hint": 'e'     # e
         "keys/@3/hint": 'uan'   # r
-        "keys/@4/hint": 'ue ü⁠e' # t
+        "keys/@4/hint": 'ue üe' # t
         "keys/@5/hint": 'un'    # y
         "keys/@6/hint": 'sh u'  # u
         "keys/@7/hint": 'ch i'  # i
@@ -53,7 +53,7 @@ preset_keyboards:
         "keys/@16/hint": 'ang'  # h
         "keys/@17/hint": 'an'   # j
         "keys/@18/hint": 'uai ing'  # k
-        "keys/@19/hint": '(i)uang'  # l
+        "keys/@19/hint": '(i/u)ang'  # l
 
         "keys/@22/hint": 'ou'   # z
         "keys/@23/hint": 'ia ua'    # x

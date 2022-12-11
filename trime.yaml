@@ -921,6 +921,7 @@ preset_keyboards:
     label_transform: uppercase #uppercase|none 中文模式键字母：大写|小写
     keys:
       # 第一行
+      # @0
       - {click: q, long_click: 1, key_text_color: AAT1, key_symbol_color: AAS, key_back_color: A_Q, hilited_key_back_color: AAH}
       - {click: w, long_click: 2, key_text_color: AAT1, key_symbol_color: AAS, key_back_color: A_W, hilited_key_back_color: BBH}
       - {click: e, long_click: 3, key_text_color: AAT2, key_symbol_color: AAS, key_back_color: A_E, hilited_key_back_color: CCH}
@@ -931,7 +932,9 @@ preset_keyboards:
       - {click: i, long_click: 8, key_text_color: AAT5, key_symbol_color: AAS, key_back_color: A_I, hilited_key_back_color: BBH}
       - {click: o, long_click: 9, key_text_color: AAT6, key_symbol_color: AAS, key_back_color: A_O, hilited_key_back_color: CCH}
       - {click: p, long_click: 0, key_text_color: AAT6, key_symbol_color: AAS, key_back_color: A_P, hilited_key_back_color: AAH}
+      # @9
       # 第二行
+      # @10
       - {click: a, long_click: select_all1, key_text_color: zyt, key_back_color: zyb, key_symbol_color: zyt, hilited_key_text_color: zyt, hilited_key_back_color: zyb, hilited_key_symbol_color: zyt, width: 5}
       - {click: a, long_click: select_all, key_text_color: AAT1, key_symbol_color: AAS, key_back_color: A_A, hilited_key_back_color: AAH}
       - {click: s, long_click: "^", key_text_color: AAT1, key_symbol_color: AAS, key_back_color: A_S, hilited_key_back_color: BBH}
@@ -943,7 +946,9 @@ preset_keyboards:
       - {click: k, long_click: '"', key_text_color: AAT5, key_symbol_color: AAS, key_back_color: A_K, hilited_key_back_color: BBH}
       - {click: l, long_click: "'", key_text_color: AAT6, key_symbol_color: AAS, key_back_color: A_L, hilited_key_back_color: CCH}
       - {click: l, long_click: "'", key_text_color: zyt, key_back_color: zyb, key_symbol_color: zyt, hilited_key_text_color: zyt, hilited_key_back_color: zyb, hilited_key_symbol_color: zyt, width: 5}
+      # @20
       # 第三行
+      # @21
       - {click: Shift_L, composing: Escape, swipe_up: DelH, width: 15, key_text_color: SHt}
       - {click: z, long_click: "`", key_text_color: AAT1, key_symbol_color: AAS, key_back_color: A_Z, hilited_key_back_color: AAH}
       - {click: x, long_click: cut, key_text_color: AAT1, key_symbol_color: AAS, key_back_color: A_X, hilited_key_back_color: BBH}
@@ -953,13 +958,17 @@ preset_keyboards:
       - {click: n, long_click: "/", key_text_color: AAT4, key_symbol_color: AAS, key_back_color: A_N, hilited_key_back_color: CCH}
       - {click: m, long_click: ":", key_text_color: AAT5, key_symbol_color: AAS, key_back_color: A_M, hilited_key_back_color: AAH}
       - {click: BackSpace, swipe_up: Candidate_switch, key_back_color: hsb, hilited_key_back_color: hsh, key_text_color: hst, hilited_key_text_color: hsht, width: 15}
+      # @29
       # 第四行
+      # @30
       - {click: K_symbols123, width: *SBK, key_symbol_offset_x: 16, long_click: K_menu, swipe_up: Menu, key_back_color: szb, key_text_color: szt, key_symbol_color: szs, hilited_key_back_color: szh, hilited_key_symbol_color: szhs} #方案选择
       - {click: ",", label: "  ，", width: *SBK, composing: delimiterD, key_symbol_offset_x: 16, long_click: "?", key_back_color: bdb, key_text_color: bdt, key_symbol_color: bds, hilited_key_back_color: bdh, hilited_key_text_color: bdht, hilited_key_symbol_color: bdhs}
       - {click: space, width: *KGK, key_text_size: 9, long_click: Mode_switch, swipe_left: Left, swipe_right: Right, key_back_color: zkgb, key_text_offset_y: 2, key_text_color: 0x00, hilited_key_text_color: 0x00, hilited_key_symbol_color: 0x00, key_symbol_color: 0x00, hilited_key_back_color: zkgh}
       - {click: ";", composing: space, width: *FHK, key_text_size: 9, long_click: Mode_switch, key_text_offset_y: 2, key_symbol_offset_y: 6, key_symbol_offset_x: 0, key_back_color: ykgb, key_text_color: ykgt, hilited_key_text_color: kght, key_symbol_color: kgs, hilited_key_symbol_color: kghs, hilited_key_back_color: ykgh}
       - {click: Return, width: *HCK, key_symbol_offset_x: 20, long_click: Color_settings, swipe_up: Theme_settings, key_back_color: hcb, key_text_color: hct, key_symbol_color: hcs, hilited_key_back_color: hch, hilited_key_text_color: hcht, hilited_key_symbol_color: hchs}
+      # @34
       # 第五行ZGH
+      # @35
       - {height: *ZGH, click: "", width: 100, key_back_color: 0x00, key_text_color: 0x00, hilited_key_back_color: 0x00, hilited_key_text_color: 0x00}
     name: "默认26键"
     width: 10

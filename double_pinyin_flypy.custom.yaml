@@ -47,11 +47,18 @@ patch:
 
   engine/filters:
       - simplifier
+      - simplifier@kaomoji
       - simplifier@emoji_conversion
       - uniquifier
       - charset_filter@gbk              # (※3) GBK 过滤
       - single_char_filter
 
+  kaomoji:
+    opencc_config: kaomoji.json
+    option_name: show_emoji
+    tags: abc
+    tips: all
+    
   emoji_conversion:
     opencc_config: emoji.json
     option_name: show_emoji
@@ -91,6 +98,7 @@ patch:
       '\': "、"
       "_" : "──"
       "'": {pair: ["「", "」"]}
+      "\"": {pair: ["『", "』"]}
       "[": ["【", "["]
       "]": ["】", "]"]
       "$": ["¥", "$", "€", "£", "¢", "¤"]
