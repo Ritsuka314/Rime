@@ -1,3 +1,0 @@
-#!sed -f quick_pinyin.dict.seq quick_pinyin.dict.yaml.original > quick_pinyin.dict.yaml
-# 兒 never appear in one line both as er2 and er1/r5
-/ er1\| r5/s/兒/ㄦ/g

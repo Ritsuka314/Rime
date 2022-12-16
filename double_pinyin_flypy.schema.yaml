@@ -16,13 +16,20 @@ schema:
 switches:
   - name: ascii_mode
     reset: 0
-    states: [ 中文, 西文 ]
+    states: ["中文", "西文"]
   - name: full_shape
-    states: [ 半角, 全角 ]
-  - name: simplification
-    states: [ 漢字, 汉字 ]
+    states: ["半角", "全角"]
   - name: ascii_punct
-    states: [ 。，, ．， ]
+    #states: [ ，。, ，． ]
+    states: ["句讀","符號"]
+  - name: zh_simp                      # (※1) 繁简转换
+    states: ["漢字", "汉字"]
+  - name: show_emoji
+    reset: 1
+    states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
+
+simplifier:
+  option_name: zh_simp
 
 engine:
   processors:
@@ -46,7 +53,22 @@ engine:
     - script_translator
   filters:
     - simplifier
+    - simplifier@kaomoji
+    - simplifier@emoji_conversion
     - uniquifier
+    - charset_filter@gbk              # (※3) GBK 过滤
+    - single_char_filter
+
+kaomoji:
+  opencc_config: kaomoji.json
+  option_name: show_emoji
+  tags: abc
+  tips: all
+  
+emoji_conversion:
+  opencc_config: emoji.json
+  option_name: show_emoji
+  tags: abc
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
@@ -88,9 +110,10 @@ speller:
     #- abbrev/^(.).+$/$1/
 
 translator:
-  dictionary: luna_pinyin
+  dictionary: luna_pinyin.extended  # 載入朙月拼音擴充詞庫
   prism: double_pinyin_flypy
-  preedit_format:
+  translator/preedit_format: {}     # 输入双拼码的时候不转化为全拼码
+  preedit_format_old:
     - xform/([bpmfdtnljqx])n/$1iao/
     - xform/(\w)g/$1eng/
     - xform/(\w)q/$1iu/
@@ -135,8 +158,34 @@ reverse_lookup:
   comment_format:
     - xform/([nl])v/$1ü/
 
+# 符号快速输入和部分符号的快速上屏
 punctuator:
+  import_preset: symbols
   import_preset: default
+  symbols:
+    "/fs": [½, ‰, ¼, ⅓, ⅔, ¾, ⅒ ]
+    "/bq": [😂️, 😅️, ☺️, 😱️, 😭️, 😇️, 🙃️, 🤔️, 💊️, 💯️, 👍️, 🙈️, 💩️, 😈️ ]
+    "/dn": [⌘, ⌥, ⇧, ⌃, ⎋, ⇪, , ⌫, ⌦, ↩︎, ⏎, ↑, ↓, ←, →, ↖, ↘, ⇟, ⇞]
+    "/fh": [ ©, ®, ℗, ℠, ™, ℡, ⓘ, ♂, ♀, ☉, ☊, ☋, ☌, ☍, ☐, ☑︎, ☒, ☜, ☝, ☞, ☟, ✎, ✄, ♲, ♻, ⚐, ⚑, ⚠]
+    "/xh": [ ＊, ×, ✱, ★, ☆, ✩, ✧, ❋, ❊, ❉, ❈, ❅, ✿, ✲]
+  half_shape:
+    ".": "．"
+    "#": "#"
+    "*": "*"
+    "`": "`"
+    "~": "~"
+    "@": "@"
+    "=": "="
+    "/": ["/", "÷",]
+    '\': "、"
+    "_" : "──"
+    "'": {pair: ["「", "」"]}
+    "\"": {pair: ["『", "』"]}
+    "[": ["【", "["]
+    "]": ["】", "]"]
+    "$": ["¥", "$", "€", "£", "¢", "¤"]
+    "<": ["《", "〈", "«", "<"]
+    ">": ["》", "〉", "»", ">"]
 
 key_binder:
   import_preset: default
@@ -145,3 +194,4 @@ recognizer:
   import_preset: default
   patterns:
     reverse_lookup: "`[a-z]*'?$"
+    punct: "^/([0-9]0?|[A-Za-z]+)$"

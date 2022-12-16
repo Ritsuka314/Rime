@@ -63,7 +63,6 @@ other:
   e: &FJL 0   #符号键盘列距
   f: &FJY 0   #符号键盘圆角
 style:
-  style:
   keyboard_height: *SPG #3.2.6锁定键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_height_land: *HPG #3.2.6锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
   auto_caps: false #自动句首大写:true|false|ascii
