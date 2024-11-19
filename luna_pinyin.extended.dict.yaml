@@ -49,22 +49,29 @@ use_preset_vocabulary: true
 
 import_tables:
   # https://github.com/scomper/Rime/tree/94d43d736db8aecdd0292b097fecb180c36eccbb
-  - dicts/simp # 最小拼音词典
-  - dicts/simp-ext # 原字表中除单字外部分
-
+  #- dicts/simp # 最小拼音词典
+  #- dicts/simp-ext # 原字表中除单字外部分
+  
   # https://github.com/metowolf/rime-sogou/tree/1c827a538a6bb0dcdb46c35b5b26691716f9d801
-  - luna_pinyin.sogou.extended
- 
-  - dicts/animal # 动物
-  - dicts/caijing # 财经
-  - dicts/food # 饮食
-  - dicts/idiom # 成语俗语
-  - dicts/IT # IT
-  - dicts/medical # 医学
-  - dicts/net # 网络流行语
-  - dicts/renmingdiming # 人名地名
-  - dicts/zhwiki # 维基百科
-
+  #- luna_pinyin.sogou.extended
+  - luna_pinyin
+  - luna_pinyin.sogou.chengyu
+  - luna_pinyin.sogou.computer
+  - luna_pinyin.sogou.mobile
+  - luna_pinyin.sogou.poetry
+  - luna_pinyin.sogou.popular
+  - luna_pinyin.sogou.social
+  
+  #- dicts/animal # 动物
+  #- dicts/caijing # 财经
+  #- dicts/food # 饮食
+  #- dicts/idiom # 成语俗语
+  #- dicts/IT # IT
+  #- dicts/medical # 医学
+  #- dicts/net # 网络流行语
+  #- dicts/renmingdiming # 人名地名
+  #- dicts/zhwiki # 维基百科
+  
   - luna_pinyin.kaomoji
   - luna_pinyin.math
 ...
