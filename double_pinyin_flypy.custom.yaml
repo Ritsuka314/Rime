@@ -1,0 +1,56 @@
+# Personal Xiaohe double-pinyin settings applied on top of Rime Ice.
+patch:
+  # Keep Rime Ice's uU component lookup and add the classic hspnz stroke table.
+  "schema/dependencies/+":
+    - stroke
+  # Segmentor order matters: lookup segmentors must run before fallback_segmentor.
+  engine/segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - affix_segmentor@radical_lookup
+    - affix_segmentor@stroke_lookup
+    - punct_segmentor
+    - fallback_segmentor
+  "engine/translators/+":
+    - reverse_lookup_translator@stroke_lookup
+
+  stroke_lookup:
+    dictionary: stroke
+    enable_completion: true
+    prefix: "uS"
+    suffix: "'"
+    tips: 〔筆畫〕
+    preedit_format:
+      - xlit/hspnz/一丨丿丶乙/
+    comment_format:
+      - xform/([nl])v/$1ü/
+
+  recognizer/patterns/stroke_lookup: "^uS[a-z]*'?$"
+
+# Legacy punctuation configuration retained for reference only. Rime Ice's
+# standard punctuation remains active except for the fullwidth-dot override below.
+# punctuator:
+#   symbols:
+#     "/fs": [½, ‰, ¼, ⅓, ⅔, ¾, ⅒]
+#     "/bq": [😂️, 😅️, ☺️, 😱️, 😭️, 😇️, 🙃️, 🤔️, 💊️, 💯️, 👍️, 🙈️, 💩️, 😈️]
+#     "/dn": [⌘, ⌥, ⇧, ⌃, ⎋, ⇪, , ⌫, ⌦, ↩︎, ⏎, ↑, ↓, ←, →, ↖, ↘, ⇟, ⇞]
+#     "/fh": [©, ®, ℗, ℠, ™, ℡, ⓘ, ♂, ♀, ☉, ☊, ☋, ☌, ☍, ☐, ☑︎, ☒, ☜, ☝, ☞, ☟, ✎, ✄, ♲, ♻, ⚐, ⚑, ⚠]
+#     "/xh": [＊, ×, ✱, ★, ☆, ✩, ✧, ❋, ❊, ❉, ❈, ❅, ✿, ✲]
+#   half_shape:
+#     ".": "．"
+#     "/": ["/", "÷"]
+#     "\\": "、"
+#     "_": "──"
+#     "'": {pair: ["「", "」"]}
+#     '"': {pair: ["『", "』"]}
+#     "[": ["【", "["]
+#     "]": ["】", "]"]
+#     "$": ["¥", "$", "€", "£", "¢", "¤"]
+#     "<": ["《", "〈", "«", "<"]
+#     ">": ["》", "〉", "»", ">"]
+
+  # Use the fullwidth dot (U+FF0E), not the ideographic full stop (U+3002).
+  "punctuator/half_shape/.": "．"
+  "punctuator/half_shape/'": {pair: ["「", "」"]}
+  'punctuator/half_shape/"': {pair: ["『", "』"]}

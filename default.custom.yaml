@@ -1,21 +1,13 @@
+# Personal global settings applied on top of Rime Ice.
 patch:
-  menu:
-    page_size: 5
   schema_list:
-  # - schema: quick_pinyin # https://github.com/yhdzien/rime-quick_pinyin
-  # - schema: luna_pinyin_simp      # 朙月拼音 简化字
-  # - schema: luna_pinyin          # 朙月拼音
-  # - schema: luna_pinyin_fluency   # 语句流
-  # - schema: double_pinyin        # 自然碼雙拼
-    - schema: double_pinyin_flypy   # 小鹤雙拼
-  # - schema: wubi_pinyin           # 五笔拼音混合輸入
+    - schema: double_pinyin_flypy
 
+  menu/page_size: 5
 
-#  ascii_composer/good_old_caps_lock: false # capslock 键切换英文并输出小写
-  # 将已输入的字符上屏，同时输入法切换为英文
-  ascii_composer/switch_key:
-#    Caps_Lock: commit_code
-#    Control_L: noop
-#    Control_R: noop
-    Shift_L: commit_code
-    Shift_R: commit_code
+  # Commit the raw code and switch to English with either Shift key.
+  ascii_composer/switch_key/Shift_L: commit_code
+  ascii_composer/switch_key/Shift_R: commit_code
+
+  # Ctrl+grave is provided by Rime Ice's default switcher hotkeys.
+  # Select Traditional once after the first deployment; save_options remembers it.

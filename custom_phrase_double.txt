@@ -1,0 +1,5 @@
+# Rime table
+# coding: utf-8
+# Fields are phrase, Xiaohe double-pinyin code, and optional weight.
+
+神楽坂	ufytbj

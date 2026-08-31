@@ -1,0 +1,4 @@
+# Use Xiaohe double-pinyin spelling for English-derived candidates.
+patch:
+  speller/algebra:
+    __include: melt_eng.schema.yaml:/algebra_double_pinyin_flypy
