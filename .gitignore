@@ -1,4 +1,10 @@
-.DS_Store
-
-*.userdb/
-build/
+# This working tree is also the active Weasel user directory. Track only the
+# personal overlay and its documentation; ignore upstream and runtime files.
+*
+!.gitignore
+!AGENTS.md
+!README.md
+!*.custom.yaml
+!custom_phrase_double.txt
+!scripts/
+!scripts/**
